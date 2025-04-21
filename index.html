@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blue's Mods Update Checker</title>
+        <style>
+            body {
+                background-color: #121212;
+                color: #ffffff;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            h1 {
+                margin-bottom: 20px;
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                width: 90%;
+                max-width: 600px;
+            }
+
+            li {
+                background-color: #1e1e1e;
+                margin: 10px 0;
+                padding: 15px;
+                border-radius: 10px;
+                text-align: center;
+                transition: background-color 0.3s ease;
+            }
+
+            li:hover {
+                background-color: #333333;
+            }
+
+            a {
+                color: #1e90ff;
+                text-decoration: none;
+                font-size: 1.2rem;
+                font-weight: bold;
+                border-radius: 5px;
+                padding: 5px 10px;
+                transition: color 0.3s ease, background-color 0.3s ease;
+            }
+
+            a:hover {
+                color: #ffffff;
+                background-color: #1e90ff;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Available JSON Update Files</h1>
+        <p>JSON files to check for updates using the NeoForge update checker</p>
+        <ul id="file-list"></ul>
+
+        <script>
+            const jsonFiles = [
+                "mod1.json",
+                "mod2.json",
+                "mod3.json",
+                "mod4.json",
+                "mod5.json",
+            ];
+
+            const fileList = document.getElementById("file-list");
+            jsonFiles.forEach((file) => {
+                const listItem = document.createElement("li");
+                const link = document.createElement("a");
+                link.href = file;
+                link.textContent = file;
+                link.target = "_blank";
+                listItem.appendChild(link);
+                fileList.appendChild(listItem);
+            });
+        </script>
+    </body>
+</html>
